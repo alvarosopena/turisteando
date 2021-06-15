@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head.ejs') %>
+        <link rel="stylesheet" href="/css/userdetail.css">
+
+
+
+    </head>
+    <body>
+            <header>
+                <%- include('../partials/header.ejs') %>
+            </header>
+    
+            <main>
+                <div class="containeruser">
+                   
+                        <article class="cardu">
+                            <h1 class="welcome"> Welcome <%= users.first_name %> </h1>
+                            <div class="card-left">
+                                <figure>
+                                    <img src="/images/users/<%= users.image %>" alt="" class="imageusuario">
+                                </figure>    
+                            </div>
+                            <div class="card-content">
+                                <h3> Tus datos: </h3>
+                                <p>Tu ID turisteando: #<%= users.id %></h2>
+                                <h3>Name: <%= users.first_name %> <%= users.last_name %></h3>
+                                <h3>Country: <%= users.country %> </h3>
+                                <p>Category: <%= users.category_id  =="1" ? "Administrador" : "Viajero" %> </p>
+                                <p>Email: <a href="mailto:<%= users.email %>" target="_blank"><%= users.email %></a></p>
+                              
+                                    <a class="button is-warning" href="/edit/<%= users.id %>"> 
+                                        <button class="button is-danger">Editar datos </button>
+                                    </a>
+                                    <br>
+                                    <form class="form is-inline" action="/edit/<%= users.id %>?_method=delete" method="POST">
+                                        <button class="button is-danger">Borrar usuario </button>
+                                        
+                                     
+                                    </div>
+                                </form>
+                                </div>
+                            </div>    
+                        </article>
+            </main>
+        <footer>
+        <%- include('../partials/footer.ejs') %>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/paquetes.css">
+    <title>Patagonia en verano</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <%- include('../partials/head.ejs') %>
+</head>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+    <main>
+        <div class="h2">
+        <h2>La Ruta del Vino</h2>
+    </div>
+        <div class="container1">
+            <div class="pic-container1">
+                <div class="pic-item">
+                    <img src="/images/vino2.jpg" alt="picture">
+                <section>
+                    <h2>Conocé la ruta del vino junto a nosotros, las mejores bodegas y paisajes</h2>
+                </section>
+                </div>
+            </div>
+
+
+         <!--CHECKBOX DE ACTIVIDADES, DEJARLO FIJO o hacer un cirulo - va debajo de INCLUDE
+        -->      
+             <article class="conjunto">
+                <div class="textopaquete">
+                    <h2 class="h2">Excursiones y actividades</h2>
+                </div>
+
+                <div class="itemspaquete"></div>
+                <div>
+                    <ul class="lista">
+                        <li>Bodegas</li>
+                        <li>Circuito en bici por viñedos</li>
+                        <li>Dia de camping</li>
+                        <li>Cata de vinos</li>
+                        <li>Cena en la mejor bodega de Mendoza</li>
+                    </ul>
+                </div>
+             </article>
+                   <!--todo esto va debajo de la foto-->      
+                   <article class="include">
+
+                
+
+
+                    <p>Nuestro paquete incluye:</p>
+                    <div class="items"><i class="fas fa-plane"></i>Avion</div>
+                    <div class="items"><i class="fas fa-car"></i>Traslados</div>
+                    <div class="items"> <i class="fas fa-concierge-bell"></i>Alojamiento</div>
+                </article>
+
+                <div class="button">
+                    <button class= btn sm btn-pink-outline>
+                        <a href="/carrito">RESERVAR</a>
+                    </button>
+                </div>
+  
+        </div>
+</main>
+
+<!--FOOTER-->
+
+    <footer>  <%- include('../partials/footer.ejs') %></footer>
+</body>
+</html>

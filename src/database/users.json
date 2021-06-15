@@ -1,0 +1,41 @@
+[
+ {
+  "first_name": "florencia",
+  "last_name": "belmaña",
+  "email": "florbel_03@hotmail.com",
+  "password": "$2a$10$0P0dl/dNqKWTo.0F3N8u5.h906LQyRE6La7pJtAxSaCDqBJjhtsA2",
+  "country": "arg",
+  "category": "Administrador",
+  "image": "user-1620083695889.jpg",
+  "id": 1
+ },
+ {
+  "first_name": "alvaro",
+  "last_name": "sopeña",
+  "email": "alvarosopenaf@gmail.com",
+  "password": "$2a$10$lEdY9WUNyAF5aGLicbe78eF8mtWzqbsfmExBij3nOdEMDQypuek6i",
+  "country": "arg",
+  "category": "Administrador",
+  "image": "user-1620083787486.jpg",
+  "id": 2
+ },
+ {
+  "first_name": "juan",
+  "last_name": "perez",
+  "email": "juanperez@gmail.com",
+  "password": "$2a$10$eq7Wj8IPqnYxrcyoAq7FjOiW9rqZVwBn7GmvUSsTcEhIDCJOlbUbu",
+  "country": "arg",
+  "category": "Viajero",
+  "image": "user-1620083844430.jpg",
+  "id": 3
+ },
+ {
+  "first_name": "doña",
+  "last_name": "florinda",
+  "email": "dona@florinda.com",
+  "password": "$2a$10$/bLlQJej/yqxql42tB9n5.FixF6w34L/FSTrZN1Kpbv23fSGhe0ia",
+  "country": "arg",
+  "category": "Viajero",
+  "id": 4
+ }
+]

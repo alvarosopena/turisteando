@@ -1,0 +1,51 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+ * {
+    box-sizing: border-box;
+    }
+ 
+    body{
+        background: #f9f9f9;
+        font-size: 20px;
+        
+      }
+
+.cont{
+    padding: 1em 0;
+    float: center;
+    width: 100%;
+    position: relative;
+    width: 90%;
+/*     max-width: 400px; */
+    margin: auto;
+    overflow: hidden;
+}
+
+.nombre{
+        font-size: 30px;
+        background-color: lightslategray;
+        height: 50px;
+        padding: 10px 20px;
+        color: white;
+        width: 25%;
+      /*   max-width: 400px; */
+        margin: auto;
+        text-align: center;
+    }
+.id-paquete{
+    font-size: 18px;
+    color: gray;
+    text-align: center;
+}
+
+
+.tamaño{
+   height: 400px;
+}
+
+
+
+
+.products{
+    text-align: center;
+}
+

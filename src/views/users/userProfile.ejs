@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head.ejs') %>
+    </head>
+    <body>
+        <header>
+            <%- include('../partials/header.ejs') %>
+        </header>
+        <main>
+            <div class="container">
+                <h1> PERFIL DE USUARIO <%= user.first_name %></h1>
+                    <article class="card">
+                        <div class="card-left">
+                        <figure>
+                            <img src="/images/users/<%= user.image %>" alt="">
+                        </figure>
+                        <h3>#<%= users.id %></h3>
+                        </div>
+                        <div class="card-content">
+                            <h3><%= users.first_name %> <%= user.last_name %></h3>
+                                <p>Categoría: <%= users.category %></p>
+                                <p>Email: <a href="mailto:<%= users.email %>" target="_blank"><%= user.email %></a></p>
+                            <div>
+                                <a class="button is-warning" href="/edit/<%= user.id %>">Editar</a><br>
+                                <form class="form is-inline" action="/edit/<%= user.id %>?_method=delete" method="POST">
+                                    <button class="button is-danger">Borrar</button>
+                                </form>
+                            </div>
+                        </div>   
+                    </article>
+            </div> 
+            
+        </main>
+
+        <footer>
+        <%- include('../partials/footer.ejs') %>
+        </footer>
+    </body>
+</html>

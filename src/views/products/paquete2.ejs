@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/paquetes.css">
+    <title>Patagonia en verano</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <%- include('../partials/head.ejs') %>
+</head>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+    <main>
+        <div class="h2">
+        <h2>Recorriendo el Norte: Jujuy 360°</h2>
+    </div>
+        <div class="container1">
+            <div class="pic-container1">
+                <div class="pic-item">
+                    <img src="/images/norte2.jpg" alt="picture">
+                <section>
+                    <h2>Conocé el norte con nosotros, sus paisajes y cultura</h2>
+                </section>
+                </div>
+            </div>
+
+
+         <!--CHECKBOX DE ACTIVIDADES, DEJARLO FIJO o hacer un cirulo - va debajo de INCLUDE
+        -->      
+             <article class="conjunto">
+                <div class="textopaquete">
+                    <h2 class="h2">Excursiones y actividades</h2>
+                </div>
+
+                <div class="itemspaquete"></div>
+                <div>
+                    <ul class="lista">
+                        <li>Salinas</li>
+                        <li>Purmamarca y el cerro de los 7 colores</li>
+                        <li>Tilcara</li>
+                
+                        <li>Peñas nocturnas</li>
+                    </ul>
+                </div>
+             </article>
+                   <!--todo esto va debajo de la foto-->      
+                   <article class="include">
+
+                    <i class="fas fa-fly"></i>
+
+
+                    <p>Nuestro paquete incluye;</p>
+                    <div class="items"><i class="fas fa-plane"></i>Avion</div>
+                    <div class="items"><i class="fas fa-car"></i>Traslados</div>
+                    <div class="items"> <i class="fas fa-concierge-bell"></i>Alojamiento</div>
+                </article>
+
+                <div class="button">
+                    <button class= btn sm btn-pink-outline>
+                        <a href="/carrito">RESERVAR</a>
+                    </button>
+                </div>
+  
+        </div>
+</main>
+
+<!--FOOTER-->
+
+    <footer>  <%- include('../partials/footer.ejs') %></footer>
+</body>
+</html>

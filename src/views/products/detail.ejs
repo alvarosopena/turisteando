@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/detail.css">
+</head>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+
+
+    <div class="container"> <!-- Eso hace que este en fila hay que darle css -->
+    
+        <div  class="product-container">
+            <div id="product-list">
+                    <h2 class="nombre"><%= product.title %></h2>  <!-- le saque class="nombre" a h2 -->
+                    <br>
+                    <div class="conjunto">
+                        <div class="product-info">
+                            <figure class="detalle-foto">
+                            <img src="/images/destinos/<%= product.image %>" alt="" class="imagen"/>
+                            </figure>
+                        </div>
+                        <br>
+                        <div class="product-info">
+                            <p class ="precio">Precio: ARS $ <%= product.price %> </p><br>
+             <!--                
+                            <div class="control">
+                                <select name="cantidad" id="cantidad">
+                                    <option disabled selected>Cuantos pasajeros</option>
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                    <option value=4>4</option>
+                                    <option value=5>5</option>
+                                </select>
+                            </div> -->
+                            
+                           
+                            <p class ="descripcion">Descripción:  <%= product.description %> </p>
+                        </div>
+                    </div>
+                    <br>
+            
+                    <div class="include">
+                        <p>Nuestro paquete incluye</p>
+                        <div class="items"><i class="fas fa-plane"></i>Avion</div>
+                        <div class="items"><i class="fas fa-car"></i>Traslados</div>
+                        <div class="items"> <i class="fas fa-concierge-bell"></i>Alojamiento</div>
+                    </div>
+                    <br>
+             
+                    <br>
+
+                        <a href="#" class="agregar-carrito" style="font-size: 25px; text-align: center; color:gray">AGREGAR AL CARRITO</a>
+                   
+                    <br>
+                </div>
+                <div class="button">
+                    <button class= btn sm btn-pink-outline>
+                    <a href="/carrito">Ir al carrito</a>
+                    </button>
+                </div>
+                    <br>
+                    
+      
+    </div>
+
+    
+
+
+    
+ </div>
+
+
+    <script src="../js/carrito.js"></script>
+<footer>
+    <%- include('../partials/footer.ejs') %>
+</footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+ #lista-carrito{
+  /*   background-color: yellow; */
+    border:solid 1px gray;  
+/*  width: auto; */
+    height: 10%;
+    text-align: center;
+   /*  justify-content: space-around; */
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+  
+}
+
+
+#carrito tbody{
+ background-color: rgb(204, 210, 216); 
+
+}
+/*  #tr{
+ background-color: yellow;
+ font-size: 30px;
+   
+ 
+}  */
+#carrito{
+    
+  /*   background-color: lightcoral; */
+  
+}
+
+
+td{
+
+}
+.carritodetail{
+  font-size: 20px;
+  margin: auto;
+}
+.carrotitle{
+    font-size: 30px;
+    background-color: lightslategray;
+    height: 60px;
+    padding: 10px 20px;
+    margin: 10px;
+    color: white;
+/*     width: 70%;
+    justify-content: center;
+    align-items: center; */
+  
+}
+.fot{
+    width: 20%;
+    float: left;
+
+    margin: 10px;
+
+}
+/*  .carritodetailpic{
+    height: 0 auto;
+}  */

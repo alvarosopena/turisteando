@@ -1,0 +1,52 @@
+/* MENU MITAD DE INDEX */
+
+
+.content-secction{
+   width: 40%;
+   margin: 20px auto;
+   overflow: hidden;
+   background-color: lightslategray;
+ 
+ 
+}
+
+.content-secction ul li{
+  /*  VER PORQUE NO LLEGA AL TOTAL DE LA BARRA EL HOVER */
+   text-align: center;
+   list-style: none;
+
+}
+.content-secction ul li a {
+  padding: 10px 20px;
+  display: block;
+  color: whitesmoke;
+ 
+}
+
+.content-secction ul li a:hover{
+   background-color: whitesmoke;
+   color: black;
+ }
+
+    /*box-sizing: content-box;
+    width: 350px;
+    height: 100px;
+    
+    padding: 20px;
+    margin: 20px auto;
+   text-align:left;
+  */
+   
+  
+/*  RESPECTA A SECCION ADMIN  */
+.admin{
+   text-align: center;
+   justify-content: center;
+}
+
+.admintext{
+   font-size: 25px;
+   text-align: center;
+   justify-content: center;   
+   color: rgb(143, 151, 167);
+}

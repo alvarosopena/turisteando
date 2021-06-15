@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <%- include('partials/head.ejs') %>
+        </head>
+    <body>
+        <header>
+            <%- include('partials/header.ejs') %>
+        </header>
+        <main>
+            <div class="texto-titles">
+                <h3> Gracias por contactarte con nosotros! </h3>
+              </div>
+
+            <div>
+                <h2>Contacto</h2>
+                <form action="contacto.html">
+                    <div class="row">
+                        <label for="email">Email: </label>
+                        <input type="email" name="email" id="email" placeholder="Ingresa un email válido">
+                    </div>
+
+                    <div class="row">
+                        <label for="message">Mensaje: </label>
+                        <textarea name="message" id="message" rows="5" placeholder="Ingresa la razón del contacto aquí"></textarea>
+                    </div>
+
+                    <div class="row">
+                        <button type="submit">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <footer>
+                <%- include('partials/footer.ejs') %>
+        </footer>
+    </body>
+</html>

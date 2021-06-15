@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    }
+
+/* NO TRABAR SOBRE ESTO INLCUYE AL HEAD .container{
+    background-color: hotpink;
+} */
+
+.nombre{
+    font-size: 30px;
+    background-color: lightslategray;
+    height: 50px;
+    padding: 10px 20px;
+    margin: 10px;
+    color: white;
+}
+
+.product-container{
+    border:solid 1px gray;  
+    width: 100% auto;
+    height: 100% auto;
+    position: relative;
+    /* justify-content: center; */
+    /* margin: 0 auto; */
+   /*  margin: 20px auto; */
+    padding: 10px; 
+
+
+    }
+
+
+p{
+    font-size: 20px;
+}
+img{
+    justify-content: left;
+    float: left;
+    width: 60%;
+    margin: 10px;
+}
+
+
+
+.incluide{
+float: right;
+}
+.items{
+    font-size: 20px;
+}
+
+/* .button{
+    font-size: 30px;
+    background-color: lightslategray;
+    height: 50px;
+    padding: 10px 20px;
+} */
+

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head.ejs') %>
+        
+    </head>
+
+    <body>
+
+    <header> 
+        <%- include('../partials/header.ejs') %>  
+    </header>
+        <main>
+            <div class="container">
+                <section>
+                    <div class="columns is-centered">
+                        <div class="column is-6">
+                          <hr>
+                          <div class="texto-titles">
+                            <h3 style="font-size: 40px;"> Registrate acá! </h3>
+                        </div>
+
+                                <form class="reservation" id="register-form" action="/users" method="POST" enctype="multipart/form-data">
+                                    <div class="field">
+                                        <label for="first_name">Nombre</label>
+                                            <div class="control">
+                                                <input type="text" name="first_name" id="first_name" value="<%= locals.old && old.first_name ? old.first_name : "" %>">
+                                            </div>
+                                                <p class="feedback is error"></p>
+                                                    <% if (locals.errors && errors.first_name) { %>
+                                                        <p class="feedback is-danger"><%= errors.first_name.msg %></p>
+                                                     <% } %>
+                                                    <div class= "errorName errorMessage"></div>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="last_name">Apellido</label>
+                                            <div class="control">
+                                                <input type="text" name="last_name" id="last_name" value="<%= locals.old && old.last_name ? old.last_name : '' %>">
+                                            </div>
+                                                <p class="feedback is error"></p>
+                                                    <% if (locals.errors && errors.last_name) { %>
+                                                        <p class="feedback is-danger"><%= errors.last_name.msg %></p>
+                                                    <% } %>
+                                                <div class= "errorLastName errorMessage"></div>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="email">Email</label>
+                                            <div class="control">
+                                                <input type="text" name="email" id="email" value="<%= locals.old && old.email ? old.email : '' %>">
+                                            </div>
+                                                <p class="feedback is error"></p>
+                                                    <% if (locals.errors && errors.email) { %>
+                                                        <p class="feedback is-danger"><%= errors.email.msg %></p>
+                                                    <% } %>
+                                                <div class= "errorEmail errorMessage"></div>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="image">Imagen de perfil</label>
+                                            <div class="control">
+                                                <input type="file" accept=".jpg, .jpeg, .png" name="image" id="image" default="/">
+                                            </div>
+                                                <p class="feedback is error"></p>
+                                                    <% if (locals.errors && errors.image) { %>
+                                                        <p class="feedback is-danger"><%= errors.image.msg %></p>
+                                                    <% } %>
+                                                <div class= "errorImage errorMessage"></div>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="password">Password</label>
+                                            <div class="control">
+                                                <input type="password" name="password" id="password">
+                                            </div>
+                                                <p class="feedback is error"></p>
+                                                <div class= "errorPassword errorMessage"></div>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="country">Selecciona tu país</label>
+                                            <div class="row">
+                                                <label for="country"></label>
+                                                <select name="country" id="country"  required>
+                                                    <option value="">Selecciona un país</option>
+                                                    <option value="arg">Argentina</option>
+                                                    <option value="bra">Brasil</option>
+                                                    <option value="chi">Chile</option>
+                                                    <option value="col">Colombia</option>
+                                                    <option value="per">Perú</option>
+                                                    <option value="uru">Uruguay</option>
+                                                    <option value="par">Paraguay</option>
+                                                    <option value="otr">Otros</option>
+                                                </select>
+                                        </div>
+                                        <br>
+
+                                        <div class="field">
+                                            <label for="category">Categoría</label>
+                                                <div class="control">
+                                                    <select name="category_id" id="category_id" required>
+                                                        <option value="">Seleccione una opción</option>
+                                                        <option value="1">Administrador</option>
+                                                        <option value="2">Viajero</option>
+                                                    </select>
+                                                </div>
+                                            <p class="feedback"></p>
+                                        </div>
+                                        <br>
+
+                                        <div class="field">
+                                            <div class="control">
+                                                <input type="submit" value="Registrate">
+                                            </div>
+                                        </div> 
+                                </form>  
+                        </div>
+                    </div>
+                </section>
+            <br>
+                <form action ="/login" >
+                    <p><input type="submit" value="Ya tenes cuenta? inicia sesión"></p>
+                </form>
+            </div>
+        </main>
+
+        <footer>
+            <%- include('../partials/footer.ejs') %>
+        </footer>
+
+        <script src="/js/user-register.js"></script>
+        <script src="../js/details.js"></script>
+    </body>
+</html>

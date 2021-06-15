@@ -1,0 +1,73 @@
+/* Clases generales */
+
+.header {
+    font-size: 20px;
+    margin-top: -5%;
+    
+}
+
+  
+a {
+      color: black;
+      /* text-transform:uppercase;*/ 
+      /*  font-weight: bold;*/
+      font-size: 25px;
+  }
+
+.color-h3{
+    
+    padding: 20px 0;
+    color:white;
+    background-color:rgb(72, 96, 207);
+    background-size: 10px;
+    font-size: 30px;
+    text-align: center
+ 
+
+}
+
+/* box de fotos*/
+
+.container {
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+    flex-direction: row;
+    box-sizing: content-box;
+    padding: 5px; 
+    display: grid;
+    
+     
+
+}
+.producto .content{
+    
+    border-radius: 2px; 
+    
+}
+
+
+
+
+.pic-item {
+    width: calc(100% - 1rem);
+  
+    width: 33.33%; 
+    background-color:lightblue;
+    margin-right: .5rem;
+    margin-left: .5rem;
+    margin-bottom: .5rem;
+    padding: .5rem;
+}
+
+.pic-item img { width: 80%; max-height: 300px;}
+
+*/
+.button {
+    background-size: contain;
+
+    font-size: 20px;
+    color:black;
+}
+
+

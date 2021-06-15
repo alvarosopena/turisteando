@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %>
+    <!-- <link rel="stylesheet" href="/css/paquetes.css"> -->
+</head>
+    <body>
+<header>
+        <%- include('../partials/header.ejs') %>
+</header>
+
+
+    <h2>Editar producto</h2>
+<!--NO FUNCIONA -->
+      <form class="form is-inline" action="/admin/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data"> 
+
+    <h2><%= product.title %></h2> 
+       <div class="field">
+        <label for="title">Titulo</label>
+        <div>
+            <input type="text" name="title" id="title" value="<%= product.title %>">
+        </div>     
+    </div>
+
+    <div class="field">
+        <label for="price">Precio</label>
+        <div>
+            <input type="text" name="price" id="price" value="<%= product.price %>">
+        </div>    
+    </div>
+
+    <div class="field">
+        <label for="image">Imagen actual</label><br>
+        
+        <img width="15%" src="/images/destinos/<%=product.image %>">
+        <div>
+            <input type="file" name="image" id="image" value="default.png" placeholder="" required>
+        
+        </div> 
+    </div>  
+
+    <div class="field">
+        <label for="description">Descripcion</label>
+        <div>
+            <input type="text" name="description" id="description" value="<%= product.description %>">
+        </div>
+    </div>  
+
+    <div class="field" style="display: none;">
+        <div>
+            <input type="text" name="id" id="id" value="<%= product.id %>">
+        </div>
+    </div>  
+    <!-- </div> -->
+
+    <div class="field">
+        <label for="destacado">Categoría</label>
+            <div class="control">
+                <select name="destacado" id="destacado">
+                    <option disabled selected>Seleccione una opción</option>
+                    <option value="SI">Destacado</option>
+                    <option value="NO">No Destacado</option>
+                </select>
+            </div>
+        <p class="feedback"></p>
+    </div>
+
+
+    <button class="button is-danger">GUARDAR EDICION</button>
+        
+    </form>
+<br>
+        <form class="form is-inline" action="/admin/edit/<%= product.id %>?_method=delete" method="POST">
+            <button class="button is-danger">BORRAR</button> 
+        </form>
+
+
+
+             
+<footer>
+    <%- include('../partials/footer.ejs') %>
+</footer>
+</body>
+</html>
+

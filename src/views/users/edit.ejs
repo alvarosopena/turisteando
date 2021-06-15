@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head.ejs') %>
+    </head>
+    <body>
+        <header>
+            <%- include('../partials/header.ejs') %>
+        </header>
+        <main>
+            <div class="container">
+                <section>
+                    <div class="columns is-centered">
+                        <div class="column is-6">
+                            <h1>Editar usuario</h1>
+                                <form action="/edit/<%= users.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+                                    <div class="field">
+                                        <label for="first_name">Nombre</label>
+                                        <div class="control">
+                                            <input type="text" name="first_name" id="first_name" value="<%= users.first_name %>">
+                                        </div>
+                                        <p class="feedback is error"></p>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="last_name">Apellido</label>
+                                        <div class="control">
+                                            <input type="text" name="last_name" id="last_name" value="<%= users.last_name %>">
+                                        </div>
+                                        <p class="feedback"></p>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="email">Email</label>
+                                        <div class="control">
+                                            <input type="text" name="email" id="email" value="<%= users.email %>">
+                                        </div>
+                                        <p class="feedback"></p>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="image">Tu foto actual: </label>
+                                        <h3> </h3>
+                                        <img width="15%" src="/images/users/<%= users.image %>" alt="">
+                                        <div class="control">
+                                            <input type="file" name="image" id="image" value="default.png" placeholder="" required>
+                                        </div>
+                                        <p class="feedback"></p>
+                                    </div>
+                                    
+                                    <div class="field">
+                                        <label for="password">Password</label>
+                                        <div class="control">
+                                            <input type="password" name="password" id="password" value="" placeholder="Ingresa nueva contraseña" required>
+                                        </div>
+                                        <p class="feedback"></p>
+                                    </div>
+                                    <div class="field">
+                                        <label for="country">Selecciona tu país</label>
+                                            <div class="row">
+                                                <label for="country">País</label>
+                                                    <select name="country" id="country" required>
+                                                        <option value="">Selecciona un país</option>
+                                                        <option value="arg" <%= users.country == 'arg' ? 'selected' : 'arg'; %>>Argentina</option>
+                                                        <option value="bra" <%= users.country == 'bra' ? 'selected' : 'bra'; %> >Brasil</option>
+                                                        <option value="chi" <%= users.country == 'chi' ? 'selected' : 'chi'; %> >Chile</option>
+                                                        <option value="col" <%= users.country == 'col' ? 'selected' : 'col'; %> >Colombia</option>
+                                                        <option value="per" <%= users.country == 'per' ? 'selected' : 'per'; %> >Perú</option>
+                                                        <option value="uru" <%= users.country == 'uru' ? 'selected' : 'uru'; %> >Uruguay</option>
+                                                        <option value="par" <%= users.country == 'par' ? 'selected' : 'par'; %>>Paraguay</option>
+                                                        <option value="otr"<%= users.country == 'otr' ? 'selected' : 'otr'; %>>Otros</option>
+                                                    </select>
+                                            </div>
+                                     <br>
+
+                                    <div class="field">
+                                        <label for="category">Categoría</label>
+                                        <div class="control">
+                                            <select name="category_id" id="category_id">
+                                                <option disabled selected>Seleccione una opción</option>
+                                                <option value="1" <%= users.category_id == '1' ? 'selected' : '1'; %>>Administrador</option>
+                                                <option value="2" <%= users.category_id == '2' ? 'selected' : '2'; %>>Viajero</option>
+                                            </select>
+                                        </div>
+                                        <p class="feedback"></p>
+                                    </div>
+
+                                    <div class="field">
+                                        <div class="control">
+                                            <button type="submit">Editar usuario</button>
+                                        </div>
+                                    </div> 
+                                </form>  
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <%- include('../partials/footer.ejs') %>
+        </footer>
+    <body>
+ <html>
+   

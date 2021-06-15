@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <%- include('partials/head.ejs') %>
+      <link rel="stylesheet" href="/css/partners.css">
+      <link rel="stylesheet" href="/css/seccion.css">
+      <link rel="stylesheet" href="/css/indexhome.css">
+  
+  </head>
+
+  <body>
+    <header>
+      <%- include('partials/header.ejs') %>
+    </header>
+    <main>
+      <section class ="hero1">
+      <div>
+        <nav class="content-secction">
+          <ul>
+           
+            <% if(user) { %> 
+            <% if (user.category_id == 1){ %>
+              <li><a href="/index-admin" class="seccion">Sección para administradores</a>
+              <hr>
+            <% } %>
+            <% } %> 
+                            
+              <li><a href="/user/<%= ( user ? user.id : "../login") %> " class="seccion"> Tu perfil de usuario </a> </li>
+           </ul>
+        </nav>
+      </div>
+
+      <!--API-->
+      <section> 
+          <!--  <div><img class="content-imagefirst"src="images/destinos/mund.jpg"></div>  -->
+          
+      </section>
+
+     
+       
+        <div class="texto-barra">
+          <h3> Tu aventura a unos clicks de distancia </h3>
+        </div>
+        <br>
+      <br>
+        <!-- barra de busqueda -->
+      <section>
+        <br>
+        <div class="pic-container1"> 
+          <div class="box">
+            <br>
+            <div class="container-3">
+            <!-- <form action="search" method="GET"> -->
+              <span class="icon"><a href="/"> Ir <i class="fa fa-search"></i></a></span>
+              <input type="search" id="search" placeholder="Busca tu proximo destino..." />
+            </div>
+          </div>
+        </div>
+        <br>
+       
+      </section> 
+    </section>
+
+      <!--  DESDE ACA PRODUCTOS DESCATADOS        -->
+<div class="container">
+      <section class="first">
+        <div class="containerproducts" >  
+          <!-- <div class="pd"> -->
+            <div class="texto-titles">
+              <h3> Destinos destacados </h3>
+            </div>
+         <!--  </div> -->
+            <div class="destacado">
+             <div class ="listaProducto">
+              <%products.forEach(product => { %>
+                <% if (product?.destacado === "SI"){ %>
+                  <div class="producto">
+                    <div class="producto-destacado">
+                    <h1 class="title"><%= product.title%></h1>
+                      <div class="content">
+                        <a href="/lista/<%= product.id%>" target="_blank">
+                          <div class="content-overlay"> <!-- PUEDE IR OTRO TEXTO --></div>
+                            <div><img class="content-images-destacado" src="images/destinos/<%=product.image%>"></div>
+                            <div class="ribbon ribbon-top-left"><span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div>
+                            <div class="content-details fadeIn-bottom"> <!-- hace que salga la info de abajo -->
+                              <h3 class="content-title"><%= product.description%></h3>
+                              <p class="content-text"> ARS $: <%= product.price%> p/p</p>
+                              <a href="/lista/<%= product.id%>" style="color: blanchedalmond;">VER DETALLE</a>
+                            </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                <% } %>
+              <% }) %>
+            </div>
+            <br>
+            <hr>
+            <br>
+          </div>
+          
+          <!--  HASTA ACA PRODUCTOS DESCATADOS        -->
+          <div class="texto-titles">
+            <h3> Otros destinos </h3>
+          </div>
+            <div class="destacado">
+              <div class ="listaProducto">
+                <%products.forEach(product => { %>
+                  <% if (product?.destacado != "SI"){ %>
+                    <div class = "producto" >
+                      <h1 class="title"><%= product.title%></h1>
+                        <div class="content">
+                          <a href="/lista/<%= product.id%>" target="_blank">
+                            <div class="content-overlay"> <!-- PUEDE IR OTRO TEXTO --></div>
+                            <div><img class="content-images" src="images/destinos/<%=product.image%>"></div>
+                            <div class="content-details fadeIn-bottom"> <!-- hace que salga la info de abajo -->
+                              <h3 class="content-title"><%= product.description%></h3>
+                              <p class="content-text"> ARS $: <%= product.price%> p/p</p>
+                              <a href="/lista/<%= product.id%>" style="color: blanchedalmond;">VER DETALLE</a>
+                            </div>
+                          </a>
+                        </div>
+                    </div>
+                    
+                  <% } %>
+                <% }) %>
+              </div>
+            </div>
+        </div>
+        <br>
+      </div>     
+      </section>
+
+      <section class="partners"> 
+        <div class="partners">
+          <div class="texto-titles" style="font-size: 25px;">
+            <h3> Colaboran con nosotros </h3>
+          </div>
+            <div class="box-partner">
+              <h3 class="title">LATAM</h3>
+                <div class="content">
+                  <a href="https://www.latam.com/es_ar/" target="_blank">
+                    <div class="content-overlay"></div>
+                     <img class="content-image" src="data:image/png;base64,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">
+                      <div class="content-details fadeIn-bottom">
+                        <h3 class="content-title">LATAM</h3>
+                        <p class="content-text"></p>
+                      </div>
+                  </a>
+               </div>
+            </div>
+          <div class="box-partner">
+            <h3 class="title">HOSTELWORLD</h3>
+              <div class="content">
+               <a href="https://www.hostelworld.com/" target="_blank">
+                  <div class="content-overlay"></div>
+                    <img class="content-image" src="data:image/png;base64,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">
+                     <div class="content-details fadeIn-bottom">
+                      <h3 class="content-title">HOSTELWORLD</h3>
+                      <p class="content-text">Meet the world</p>
+                      </div>
+                  </a>
+              </div>
+          </div>
+          <div class="box-partner">
+            <h3 class="title">Assist Card</h3>
+              <div class="content">
+               <a href="https://www.assistcard.com/ar" target="_blank">
+                  <div class="content-overlay"></div>
+                    <img class="content-image" src="data:image/png;base64,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">
+                     <div class="content-details fadeIn-bottom">
+                      <h3 class="content-title">Assist Card</h3>
+                      <p class="content-text">El mejor seguro para tu viaje</p>
+                      </div>
+                  </a>
+              </div>
+          </div>
+        </div>
+      </div>
+      </section>
+    </main>
+
+    <footer>
+      <%- include('partials/footer.ejs') %>
+    </footer>
+
+  </body>
+</html>

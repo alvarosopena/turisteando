@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head.ejs') %>
+        <link rel="stylesheet" href="css/seccion.css">
+   
+    </head>
+    <body>
+        <header>
+            <%- include('partials/header.ejs') %>
+        </header>
+        <hr>
+       
+        <main>
+            <h1 class="admin"> SECCIÓN ADMINISTRADOR </h1>
+            <p class="admintext">Crea, edita, borra paquetes y usuarios</p>
+            <div>
+                <nav class="content-secction">
+                    <ul>
+                        <li><a href="/lista">ADMINISTRAR PAQUETES </a> </li>
+                    <hr>
+                        <li><a href="/userList">ADMINISTRAR USUARIOS</a> </li>
+                    </ul>
+                </nav>
+            </div>
+        </main>
+
+        <footer>
+            <%- include('partials/footer.ejs') %>
+        </footer>
+    </body>
+</html>

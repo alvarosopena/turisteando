@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+<head>
+    <%- include('../partials/head.ejs') %>
+ <link rel="stylesheet" href="/css/carrito.css"> 
+    
+</head>
+<body>
+    <header class="header">
+        <%- include('../partials/header.ejs') %>
+    </header>
+
+    <main>
+        <div class="container">
+            <div> 
+                <h2 style="font-size: 50px;"> Hagamos la reserva!</h2>
+                <hr>
+                <h3 style="font-size: 35px"> Chequea que todo este correcto!</h3>
+                <p class= "compra" style= "font-size: 25px">  Reservá solo con tu tarjeta de crédito</p>
+                <br>
+               <div class ="methods" style="font-size:30px; text-align: center;"> 
+                   <a class="fab fa-cc-mastercard" style="font-size:40px"> </a>
+                   <a class="fab fa-cc-paypal" style="font-size:40px"> </a>
+                  <a class="fab fa-cc-amex" style="font-size:40px"> </a>
+                  <a class="fab fa-cc-visa" style="font-size:40px"> </a>
+               </div>
+            </div> 
+             <br>
+             <hr>
+
+        <div class= "resumen">
+            <h2 style="font-size: 40px;" class="carrotitle"> Resumen de tus reservas</h2>
+ 
+               <div id="carrito">    
+                    <table id="lista-carrito">
+                        <tbody>
+                            
+                        </tbody>
+                        
+                    </table>
+                
+                    <a href="/carrito" id="vaciar-carrito" style="font-size: 35px; text-align: center;"><input type="submit" value="Vaciar carrito"></a>
+                </div>
+            <br>
+        </div>
+           
+       
+            <br>
+            </div>
+        <hr>  
+        <br>
+        <%- include('../partials/cotizacion.ejs') %>
+        <hr>
+
+        <section class="payment">
+            <div class="payment">
+                <div class="superior">
+                    <h2>PAGÁ TU VIAJE</h2>
+                    <br>
+                    <h2> (Only with credit card)</h2>
+                </div>
+                    <br>
+                <form action="Pagar" method="POST">
+                    <div class="tarjeta">
+                        <p>Numero de tarjeta:</p>
+                        <label for="numero-tarj"></label><i class="fas fa-credit-card"></i> </label>
+                        <input type="text" name="numero-tarj" id="numero-tarj" placeholder="XXXX XXXX XXXX XXXX">
+                    </div>
+
+                    <div class="nombre-tarj">
+                        <p>Nombre como aparece en la tarjeta:</p>
+                        <label for="nombre-tarj"><i class="fas fa-user"></i></label>
+                        <input type="text" name="nombre-tarj" id="nombre-tarj" placeholder="">
+                    </div>
+
+                    <div class="codigo">
+                        <p> Codigo de seguridad:</p>
+                        <label for="clave"><i class="fas fa-key"></i></label>
+                        <input type="password" name="clave" id="clave" placeholder="">
+                </div>
+
+                <div class="fecha">
+                    <p>Fecha de vencimiento:</p>
+                    <label for="fecha"><i class="fas fa-calendar-alt"></i></label>
+                    <input type="date" name="fecha" id="fecha" placeholder="">
+                </div>
+
+                    <div class="boton">
+                        <div class ="confirmar"><input type="submit" value="Confirmar"></div>
+                    </div>
+                    </form>
+            </div>
+            
+        </section>
+        <br>
+    </main>
+
+    <script src="../js/payment.js"></script>
+    <footer>
+    <%- include('../partials/footer.ejs') %>
+    </footer>
+    
+</body>
+</html>

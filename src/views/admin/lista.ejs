@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/lista.css">
+</head>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+    <main>
+        <br>
+        <form action="/crear" method="GET">
+            <input type="submit" value="Crear nuevo paquete"/>
+        </form>
+        <br>
+
+         
+          
+               <div class="cont">
+                <ul>  
+                        <hr>
+                        <br>
+                        <div class='products'>
+                            <h2 class="nombre">Detalle de paquetes</h2>
+                        <%products.forEach(product => { %>
+                                    <p class='product'>
+                                    <a href='/lista/<%= product.id%>'> <br>
+                                    <h4> Titulo:</h4>
+                                    <p><%=product.title%> </p> <br>
+                                    <figure> 
+                                    <img src="/images/destinos/<%=product.image%>"  class="tamaño"/><br>
+                                    </a>
+                                    <h4> Precio: ARS $ <%= product.price%> </h4><br>
+                                    <h3 class="id-paquete"> N° de referencia: #<%= product.id %></h3><br>
+                                    <h3 class="id-paquete">Destacado: <%= product.destacado  =="SI" ? "SI" : "NO" %> </h3><br>
+                                    
+                                <div class="button">
+                                <button class= btn sm btn-pink-outline>
+                                    <a href="/lista/<%= product.id%>">VER PUBLICACIÓN</a>
+                                </button>
+                                </div>
+                                <br>
+                                <div class="button">
+                                    <button class= btn sm btn-pink-outline>
+                                        <a href="admin/edit/<%= product.id%>">EDITAR</a>
+                                    </button>
+                                </div>
+                               
+                                <br>
+                            <!-- <div class="button">
+                                    <button class= btn sm btn-pink-outline>
+                                        <a href="">BORRAR</a>
+                                    </button>
+                                </div> -->
+                                <hr> 
+                                
+                                </p>
+                    <% }) %>
+                    
+                    </div>
+                
+                </ul>
+            </div>
+    </main>
+<footer>
+        <%- include('../partials/footer.ejs') %>
+</footer>
+</body>
+</html>

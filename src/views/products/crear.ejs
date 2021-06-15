@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %>
+   <!--  <link rel="stylesheet" href="css/paquetes.css"> -->
+   <link rel="stylesheet" href="css/validateproducts.css"> 
+    
+</head>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+    <main>
+        <div class="create-p">
+            <h2>CREAR PAQUETE</h2>
+        <!--este if respecta  a las v del back. -->
+        
+        <form class="form-reservation" id="product-reservation"  action="/crear" method="POST" enctype="multipart/form-data"> 
+
+
+            <div class="field">
+                    <label for="">Titulo</label>
+                <div>
+                    <input type="text" 
+                    name="title" 
+                    value="<%= locals.old && old.title ? old.title : ''%>" class="form-control <%= locals.errors && errors.title ? 'is-invalid' : null %>" require>
+                </div>
+                <% if (locals.errors && errors.title) { %>
+                <p class="feedback is-danger"><%= errors.title.msg %></p>
+                <% } %>
+                <div class= "errorTitle errorMessage"></div>
+            </div>
+
+
+
+            
+            <div class="field">
+                    <label for="image">Imagen</label>
+                    <div>
+                    <input type="file" 
+                    name="image" id="image" 
+                    value="<%= locals.old && old.image ? old.image : ''%>" 
+                    class="form-control <%= locals.errors && errors.image ? 'is-invalid' : null %>" required>
+                </div>
+                <% if (locals.errors && errors.image) { %>
+                <p class="feedback is-danger"><%= errors.image.msg %></p>
+                <% } %>
+                <div class= "errorImage errorMessage"></div>
+            </div>   
+
+            <div class="field">
+                    <label for="">Descripción</label>
+                    <div>
+                    <input type="text" 
+                    name="description" 
+                    value="<%= locals.description && old.description ? old.description : ''%>" class="form-control <%= locals.errors && errors.description ? 'is-invalid' : null %>">
+                    </div>
+                    <% if (locals.errors && errors.description) {%>
+                <p class="feedback is-danger"><%= locals.description.msg %></p>
+                <% } %>
+                <div class= "errorDescription errorMessage"></div>
+            </div>
+
+            <div class="field">
+                    <label for="">Precio</label>
+                    <div>
+                    <input type="text" 
+                    name="price" 
+                    value="<%= locals.old && old.price ? old.price : ''%>" class="form-control <%= locals.errors && errors.price ? 'is-invalid' : null %>">
+                </div>
+                <% if (locals.errors && errors.price) { %>
+                <p class="feedback is-danger"><%= errors.price.msg %></p>
+                <% } %>
+                <div class= "errorPrice errorMessage" ></div>
+            </div>
+
+            <div class="field">
+                <label for="destacado">Categoría</label>
+                    <div class="control">
+                        <select name="destacado" id="destacado">
+                            <option disabled selected>Seleccione una opción</option>
+                            <option value="SI">Destacado</option>
+                            <option value="NO">No Destacado</option>
+                        </select>
+                    </div>
+                <p class="feedback"></p>
+            </div>
+
+
+                
+            <div class="field">
+                <div class="control">
+                    <input type="submit" value="Crear paquete">
+                </div>
+            </div> 
+
+                    <% if (locals.errors) { 
+                    errors.forEach(error => { %>
+                    <p class="feedback is-danger"><%= error.msg %></p>
+                    <% })} %>
+            
+                
+
+
+            </form>
+                
+                </div>
+
+    </main>
+
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+    <script src="/js/product-valid.js"></script> 
+    <script src="../js/details.js"></script> 
+    </body>
+</html>

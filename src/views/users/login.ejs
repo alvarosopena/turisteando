@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>  
+        <%- include('../partials/head.ejs') %>
+        
+    </head>
+
+    <body>
+        <header> 
+            <%- include('../partials/header.ejs') %>  
+        </header>
+        <div class="container">
+            <section>
+                <div class="texto-titles">
+                    <h3 style="font-size: 40px;"> Ingresá con tu mail y contraseña </h3>
+                </div>
+                <div class="login">
+                    
+                        <!-- LOGIN FORM -->
+                        <form class="form-login" id="login-form" action="/login" method="POST">
+        
+                            <div>
+                                <label for="email"><i class="fas fa-user "></i> Email</label>
+                                    <div class="control">
+                                        <input type="text" name="email" id="email" placeholder="juan@ejemplo.com" value="<%= locals.old && old.email ? old.email : '' %>">
+                                    </div>
+                                    <!-- Errores back -->
+                                    <% if (locals.errors && errors.email) { %>
+                                        <p class="feedback is-danger"><%= errors.email.msg %></p>
+                                    <% } %>
+                                    <!-- Errores front -->
+                                    <div class= "errorEmail errorMessage"></div>
+                            </div>
+
+                            <div>
+                                <label for="password"><i class=" fas fa-key "></i> Password</label>
+                                    <div class="control">
+                                        <input type="password" name="password" id="password" placeholder="">
+                                    </div>
+                                    <% if (locals.errors && errors.password) { %>
+                                        <p class="feedback is-danger"><%= errors.password.msg %></p>
+                                    <% } %>
+
+                                    <div class= "errorPassword errorMessage"></div>
+                            </div>
+
+                            <div class="row">
+                                <input type="submit" value="Ingresa" ><br>
+                            </div>
+                            
+                            <br>
+                            
+                            <div>
+                                <input type="checkbox" name="recordarme" ><br>
+                                    <label for="">Recordarme</label>
+                            </div> 
+            
+                        </form>  
+                        <!-- END LOGIN FORM -->
+                        <!-- FORGET PW -->
+                        <form action ="/login" >
+                            <p><input type="submit" href="#" value="Olvidé la contraseña"></p>
+                        </form> 
+                        <br>
+                        <!-- ENDFORGET PW -->
+                        <!-- REGISTER -->
+                    <form action ="/register" >
+                        <p><input type="submit" value="No tenes cuenta? Registrate acá!"></p>
+                    </form> 
+                    <!-- END REGISTER -->
+                    </section>
+        
+        <footer>
+            <%- include('../partials/footer.ejs') %>
+        </footer>
+        <script src="/js/user-log.js"></script>
+        <script src="../js/details.js"></script> 
+    </body>
+</html>

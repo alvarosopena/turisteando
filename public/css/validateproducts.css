@@ -1,0 +1,17 @@
+.errorPrice,
+.errorDescription,
+.errorTitle
+
+ {
+    color: red;
+    font-weight: bolder;
+    
+
+}
+
+.errorMensaje {
+    display: none;
+    color: red;
+    
+}
+
